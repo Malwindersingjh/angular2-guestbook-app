@@ -1,0 +1,49 @@
+<div class="row" *ngIf="_errorMessage">
+    <div class="col-sm-12">
+        <p class="alert alert-danger">{{_errorMessage}}</p>
+    </div>
+</div>
+
+<div class="animated fadeIn" *ngIf="!_guestbook && !_errorMessage">
+    <span class="spinner"></span>
+</div>
+<div class="animated fadeIn" >
+    <div class="row">
+        <div class="col-lg-12">
+            <div class="card">
+                <div class="card-header">
+                    <i class="fa fa-align-justify"></i> Guestbook List
+                </div>
+                <div class="card-block">
+                    <div class="table-responsive">
+                        <table class="table table-striped table-bordered table-condensed">
+                            <thead>
+                            <tr>
+                                <th class="text-xs-center">Name</th>
+                                <th>Phone</th>
+                                <th width="25%" class="text-xs-center">Message</th>
+                            </tr>
+                            </thead>
+                            <tbody>
+                            <tr *ngFor="let guestbook of _guestbook">
+                                <td>
+									{{guestbook.username}}
+                                </td>
+                                <td>
+                                    {{guestbook.phone}}
+                                </td>				                                                               
+                                <td class="text-xs-center">				    
+                                    {{guestbook.message}}				   
+                                </td> 
+                            </tr>
+                            </tbody>
+                        </table>
+                    </div>
+                </div>
+                <div class="card-footer">
+                    <a class="btn btn-primary btn-sm" [routerLink]="['/guestbook', 'add']" routerLinkActive="active"><i class="fa fa-plus-square"></i> Add Your Review</a>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>

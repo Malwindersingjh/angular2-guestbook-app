@@ -1,0 +1,42 @@
+<header class="navbar">
+    <div class="container-fluid">
+        <a class="navbar-brand" href="#"></a>
+
+        <ul class="nav navbar-nav hidden-md-down">
+	    <li class="nav-item px-1">
+                <a class="nav-link" routerLinkActive="active" [routerLink]="['/states']">State List</a>
+            </li>
+            <li class="nav-item px-1">
+                <a class="nav-link" routerLinkActive="active" [routerLink]="['/guestbook']">Guestbook</a>
+            </li>            
+        </ul>
+	
+	<ul class="nav navbar-nav pull-right" *ngIf="this._userService.isLoggedIn() == false">
+            <li class="nav-item">
+                <a class="nav-link" routerLinkActive="active" [routerLink]="['/login']">Login</a>
+            </li>
+            <li class="nav-item">
+                <a class="nav-link" routerLinkActive="active" [routerLink]="['/signup']">Register</a>
+            </li>
+        </ul>
+
+        <ul class="nav navbar-nav pull-right" *ngIf="this._userService.isLoggedIn() == true">
+            <li class="nav-item px-h">
+                <span>{{userData.username}}</span>
+            </li>
+            <li class="nav-item px-h">
+                <a class="nav-link" routerLinkActive="active" [routerLink]="['/logout']">Logout</a>
+            </li>
+        </ul>
+	
+    </div>
+</header>
+
+<!-- Main content -->
+<main class="main" style="padding-left:0px" >
+    <div class="container-fluid">
+        <router-outlet></router-outlet>
+    </div>
+    <!-- /.conainer-fluid -->
+</main>
+

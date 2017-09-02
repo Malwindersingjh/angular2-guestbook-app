@@ -1,0 +1,20 @@
+<div class="row" *ngIf="_errorMessage">
+    <div class="col-sm-12">
+        <p class="alert alert-danger">{{_errorMessage}}</p>
+    </div>
+</div>
+<div class="container">
+    <div class="starter-template">
+		<b>State Detail</b>
+		<br>
+		<p>{{ _state.name }}</p>
+		<p>{{ _state.abbreviation }}</p>	
+		<p>{{ _state.capital }}</p>	
+		<p>{{ _state.mostpopulouscity }}</p>	
+		<p>{{ _state.population }}</p>	
+		<p>{{ _state.squaremiles }}</p>	
+		<p>{{ _state.timezone1 }}</p>	
+		<p>{{ _state.timezone2 }}</p>	
+		<p>{{ _state.dst }}</p>	
+    </div>
+</div>
